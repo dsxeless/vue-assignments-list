@@ -3,10 +3,14 @@ export default {
         <section v-show="assignments.length">
             <h1>{{ title }}</h1>
             <ul>
-                <li v-for="assignment in assignments" :key="assignment.id">
+                <li 
+                    v-for="assignment in assignments" 
+                    :key="assignment.id"
+                    :class="{ completed: assignment.complete }"
+                >
                     <label>
                         {{ assignment.name }}
-                        <input type="checkbox" v-model="assignment.complete" @change="updateAssignments">
+                        <input type="checkbox" v-model="assignment.complete">
                     </label>
                 </li>                
             </ul>
@@ -16,17 +20,5 @@ export default {
     props: {
         assignments: Array,
         title: String
-    },
-
-    methods: {
-        updateAssignments() {
-            this.assignments.forEach(assignment => {
-                if (assignment.complete) {
-                    assignment.complete = true;
-                } else {
-                    assignment.complete = false;
-                }
-            });
-        }
     }
 };

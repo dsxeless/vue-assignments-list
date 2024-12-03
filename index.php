@@ -51,6 +51,10 @@
         font-size: 18px;
         color: #4a5568;
     }
+    .completed {
+        text-decoration: line-through;
+        color: #aaa;
+}
     </style>
 </head>
 <body>
