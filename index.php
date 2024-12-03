@@ -7,24 +7,50 @@
     <script src="https://unpkg.com/vue@3"></script>
     <style>
         body {
-            height: 100vh;
-            display: flex; 
-            justify-content: center; 
-            align-items: center;
-            flex-direction: column;
-        }
-        h1 {
-            margin: 0;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin: 5px 0; 
-            display: flex; 
-            align-items: center;
-        }
+        height: 100vh;
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        flex-direction: column;
+        background-color: #f4f4f4; 
+        font-family: Arial, sans-serif; 
+    }
+    h1 {
+        margin: 20px 0;
+        color: #333; 
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    li {
+        margin: 5px 0; 
+        display: flex; 
+        align-items: center;
+        background-color: #fff; 
+        border-radius: 5px; 
+        padding: 10px; 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        transition: background-color 0.3s; 
+    }
+    li:hover {
+        background-color: #e0e7ff;
+    }
+    input[type="checkbox"] {
+        margin-left: 10px; 
+    }
+    section {
+        margin: 20px;
+        width: 300px; 
+        background-color: #ffffff; 
+        border-radius: 8px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 15px; 
+    }
+    section h1 {
+        font-size: 18px;
+        color: #4a5568;
+    }
     </style>
 </head>
 <body>
