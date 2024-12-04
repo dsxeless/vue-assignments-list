@@ -7,54 +7,79 @@
     <script src="https://unpkg.com/vue@3"></script>
     <style>
         body {
-        height: 100vh;
-        display: flex; 
-        justify-content: center; 
-        align-items: center;
-        flex-direction: column;
-        background-color: #f4f4f4; 
-        font-family: Arial, sans-serif; 
-    }
-    h1 {
-        margin: 20px 0;
-        color: #333; 
-    }
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-    li {
-        margin: 5px 0; 
-        display: flex; 
-        align-items: center;
-        background-color: #fff; 
-        border-radius: 5px; 
-        padding: 10px; 
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-        transition: background-color 0.3s; 
-    }
-    li:hover {
-        background-color: #e0e7ff;
-    }
-    input[type="checkbox"] {
-        margin-left: 10px; 
-    }
-    section {
-        margin: 20px;
-        width: 300px; 
-        background-color: #ffffff; 
-        border-radius: 8px; 
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 15px; 
-    }
-    section h1 {
-        font-size: 18px;
-        color: #4a5568;
-    }
-    .completed {
-        text-decoration: line-through;
-        color: #aaa;
-}
+            height: 100vh;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            flex-direction: column;
+            background-color: #f4f4f4; 
+            font-family: Arial, sans-serif; 
+        }
+        h1 {
+            margin: 20px 0;
+            color: #333; 
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0; 
+            display: flex; 
+            align-items: center;
+            background-color: #fff; 
+            border-radius: 5px; 
+            padding: 10px; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            transition: background-color 0.3s; 
+        }
+        li:hover {
+            background-color: #e0e7ff;
+        }
+        input[type="checkbox"] {
+            margin-left: 10px; 
+        }
+        section {
+            margin: 20px;
+            width: 300px; 
+            background-color: #ffffff; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px; 
+        }
+        section h1 {
+            font-size: 18px;
+            color: #4a5568;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: #aaa;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        button {
+            background-color: rgb(180, 10, 220);
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: rgb(250, 10, 250);
+        }
+        input {
+            padding-inline: 10px;
+            padding-block: 5px;
+            font-size: 18px;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
