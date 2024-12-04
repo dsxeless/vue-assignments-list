@@ -13,9 +13,9 @@ export default {
     data() {
         return {
             assignments: [
-                {name: 'Finish the project', complete: false, id: 1},
-                {name: 'Read chapter 1', complete: false, id: 2},
-                {name: 'Turn homework in', complete: false, id: 3}
+                { name: 'Finish the project', complete: false, id: 1 },
+                { name: 'Read chapter 1', complete: false, id: 2 },
+                { name: 'Turn homework in', complete: false, id: 3 }
             ]
         };
     },
