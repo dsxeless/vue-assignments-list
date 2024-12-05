@@ -60,7 +60,7 @@
             flex-direction: column;
             margin-top: 20px;
         }
-        button {
+        .addButton {
             background-color: rgb(180, 10, 220);
             color: white;
             padding: 10px;
@@ -71,7 +71,7 @@
             transition: background-color 0.3s;
             margin-top: 20px;
         }
-        button:hover {
+        .addButton:hover {
             background-color: rgb(250, 10, 250);
         }
         input {
@@ -80,6 +80,32 @@
             font-size: 18px;
             border-radius: 8px;
         }
+        button {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .filter-button {
+            background-color: #6200ea; 
+            color: white; 
+            padding: 10px 15px; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            margin-right: 5px;
+            transition: background-color 0.3s, transform 0.2s; 
+            font-size: 16px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        }
+        .filter-button:hover {
+            background-color: #3700b3; 
+            transform: translateY(-2px); 
+        }
+        .current-filter-button {
+            background-color: #9e7ae5;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
     </style>
 </head>
 <body>
