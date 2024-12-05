@@ -15,20 +15,11 @@ export default {
     methods: {
         add () {
             if (this.newAssignment) {
-                this.assignments.push({
-                    name: this.newAssignment,
-                    complete: false,
-                    id: this.assignments.length++,
-                });
-
-                this.newAssignment = ''
+                this.$emit('add', this.newAssignment);
+                this.newAssignment = '';
             } else {
-                alert("Assignment can't be empty")
+                alert("Assignment can't be empty");
             }
         }
     },
-
-    props: {
-        assignments: Array
-    }
 }

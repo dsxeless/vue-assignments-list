@@ -10,7 +10,7 @@ export default {
     template: `
         <assignments-list :assignments="inProgressAssignments" title="In Progress"></assignments-list>
         <assignments-list :assignments="completedAssignments" title="Completed"></assignments-list>
-        <assignment-create :assignments="assignments"></assignment-create>
+        <assignment-create @add="add" :assignments="assignments"></assignment-create>
     `,
 
     data() {
@@ -33,18 +33,14 @@ export default {
     },
 
     methods: {
-        add () {
-            if (this.newAssignment) {
+        add (name) {
                 this.assignments.push({
-                    name: this.newAssignment,
+                    name: name,
                     complete: false,
                     id: this.assignments.length + 1,
                 });
 
                 this.newAssignment = ''
-            } else {
-                alert("Assignment can't be empty")
-            }
         }
     },
 };

@@ -12,7 +12,7 @@ export default {
                 <assignment
                     v-for="assignment in assignments" 
                     :key="assignment.id"
-                    :assignment="assignment" 
+                    :assignment="assignment"
                 ></assignment>
             </ul>
         </section>
