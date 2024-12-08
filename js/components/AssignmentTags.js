@@ -3,10 +3,10 @@ export default {
         <div>
             <button 
                 v-for="tag in tags"
-                @click="$emit('change', tag)"
+                @click="$emit('update:modelValue', tag)"
                 class="filter-button"
                 :class="{
-                    'current-filter-button': currentTag === tag
+                    'current-filter-button': modelValue === tag
                 }"
             >
                 {{ tag }}
@@ -16,7 +16,7 @@ export default {
 
     props: {
         initialTags: Array,
-        currentTag: String,
+        modelValue: String,
     },
 
     computed: {

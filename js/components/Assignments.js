@@ -8,9 +8,18 @@ export default {
     },
     
     template: `
-        <assignments-list :assignments="inProgressAssignments" title="In Progress"></assignments-list>
-        <assignments-list :assignments="completedAssignments" title="Completed"></assignments-list>
-        <assignment-create @add="add" :assignments="assignments"></assignment-create>
+        <assignments-list 
+            :assignments="inProgressAssignments" 
+            title="In Progress">
+        </assignments-list>
+        <assignments-list 
+            :assignments="completedAssignments" 
+            title="Completed">
+        </assignments-list>
+        <assignment-create 
+            @add="add" 
+            :assignments="assignments">
+        </assignment-create>
     `,
 
     data() {
