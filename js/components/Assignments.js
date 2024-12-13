@@ -24,11 +24,7 @@ export default {
 
     data() {
         return {
-            assignments: [
-                { name: 'Finish the project', complete: false, id: 1, tag: 'math' },
-                { name: 'Read chapter 1', complete: false, id: 2, tag: 'reading' },
-                { name: 'Turn homework in', complete: false, id: 3, tag: 'math' }
-            ],
+            assignments: [],
         };
     },
 
@@ -39,6 +35,24 @@ export default {
         completedAssignments() {
             return this.assignments.filter(assignment => assignment.complete);
         }
+    },
+
+    created() {
+        fetch('http://localhost:3000')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                this.assignments = data;
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            })
+            .then(assignments => this.assignments = assignments)
     },
 
     methods: {

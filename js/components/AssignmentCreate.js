@@ -11,7 +11,7 @@ export default {
             newAssignment: '',
         }
     },
-
+    
     methods: {
         add () {
             if (this.newAssignment) {
