@@ -35,16 +35,8 @@ export default {
     props: {
         assignments: Array,
         title: String,
-        canToggle: 
-            { 
-                type: Boolean, 
-                default: false 
-            },
-        show: 
-            { 
-                type: Boolean, 
-                default: true 
-            } 
+        canToggle: { type: Boolean, default: false },
+        show: { type: Boolean, default: true } 
     },
     
     data() {

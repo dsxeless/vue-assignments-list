@@ -115,4 +115,6 @@ button {
 section {
     position: relative;
 }
-
+input[placeholder="Tag (optional)"] {
+    margin-top: 15px;
+}

@@ -11,9 +11,7 @@ export default {
         <assignments-list
             :assignments="inProgressAssignments"
             title="In Progress"
-            :show="showInProgress"
-            can-toggle
-            @toggle="toggleInProgress">
+            :show="true">
         </assignments-list>
         <assignments-list
             :assignments="completedAssignments"
@@ -31,8 +29,7 @@ export default {
     data() {
         return {
             assignments: [],
-            showInProgress: true, // Для состояния видимости секции In Progress
-            showCompleted: true   // Для состояния видимости секции Completed
+            showCompleted: true 
         };
     },
 
@@ -53,6 +50,7 @@ export default {
                 }
 
                 const json = await response.json();
+
                 return json;
             })
             .then(data => {
@@ -65,18 +63,13 @@ export default {
     },
 
     methods: {
-        add(name) {
+        add(assignment) {
             this.assignments.push({
-                name: name,
+                name: assignment.name,
                 complete: false,
                 id: this.assignments.length + 1,
+                tag: assignment.tag || 'without tag' 
             });
-        },
-        toggleInProgress() {
-            this.showInProgress = !this.showInProgress; // Переключение состояния
-        },
-        toggleCompleted() {
-            this.showCompleted = !this.showCompleted; // Переключение состояния
         }
     },
 };
