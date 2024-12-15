@@ -6,18 +6,18 @@ export default {
         AssignmentsList,
         AssignmentCreate,
     },
-    
+
     template: `
-        <assignments-list 
-            :assignments="inProgressAssignments" 
+        <assignments-list
+            :assignments="inProgressAssignments"
             title="In Progress">
         </assignments-list>
-        <assignments-list 
-            :assignments="completedAssignments" 
+        <assignments-list
+            :assignments="completedAssignments"
             title="Completed">
         </assignments-list>
-        <assignment-create 
-            @add="add" 
+        <assignment-create
+            @add="add"
             :assignments="assignments">
         </assignment-create>
     `,
@@ -38,12 +38,15 @@ export default {
     },
 
     created() {
-        fetch('http://localhost:3000')
-            .then(response => {
+        fetch('http://localhost:3000/assignments')
+            .then(async (response) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
                 }
-                return response.json();
+
+              const json = await response.json();
+
+              return json;
             })
             .then(data => {
                 console.log(data);
