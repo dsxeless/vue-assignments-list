@@ -10,11 +10,17 @@ export default {
     template: `
         <assignments-list
             :assignments="inProgressAssignments"
-            title="In Progress">
+            title="In Progress"
+            :show="showInProgress"
+            can-toggle
+            @toggle="toggleInProgress">
         </assignments-list>
         <assignments-list
             :assignments="completedAssignments"
-            title="Completed">
+            title="Completed"
+            :show="showCompleted"
+            can-toggle
+            @toggle="toggleCompleted">
         </assignments-list>
         <assignment-create
             @add="add"
@@ -25,6 +31,8 @@ export default {
     data() {
         return {
             assignments: [],
+            showInProgress: true, // Для состояния видимости секции In Progress
+            showCompleted: true   // Для состояния видимости секции Completed
         };
     },
 
@@ -44,9 +52,8 @@ export default {
                     throw new Error('Network response was not ok ' + response.statusText);
                 }
 
-              const json = await response.json();
-
-              return json;
+                const json = await response.json();
+                return json;
             })
             .then(data => {
                 console.log(data);
@@ -54,19 +61,22 @@ export default {
             })
             .catch(error => {
                 console.error('Fetch error:', error);
-            })
-            .then(assignments => this.assignments = assignments)
+            });
     },
 
     methods: {
-        add (name) {
-                this.assignments.push({
-                    name: name,
-                    complete: false,
-                    id: this.assignments.length + 1,
-                });
-
-                this.newAssignment = ''
+        add(name) {
+            this.assignments.push({
+                name: name,
+                complete: false,
+                id: this.assignments.length + 1,
+            });
+        },
+        toggleInProgress() {
+            this.showInProgress = !this.showInProgress; // Переключение состояния
+        },
+        toggleCompleted() {
+            this.showCompleted = !this.showCompleted; // Переключение состояния
         }
     },
 };

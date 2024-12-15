@@ -8,12 +8,14 @@ export default {
     },
 
     template: `
-        <section v-show="assignments.length">
+        <section v-show="show && assignments.length">
             <h1>
                 {{ title }}
                 <span>({{ assignments.length }})</span>
             </h1>
             
+            <button class="close-button" v-show="canToggle" @click="$emit('toggle')">&times;</button>
+
             <assignment-tags 
                 v-model="currentTag"
                 :initial-tags="assignments.map(a => a.tag)"
@@ -30,16 +32,25 @@ export default {
         </section>
     `,
 
-
     props: {
         assignments: Array,
-        title: String
+        title: String,
+        canToggle: 
+            { 
+                type: Boolean, 
+                default: false 
+            },
+        show: 
+            { 
+                type: Boolean, 
+                default: true 
+            } 
     },
     
     data() {
         return {
             currentTag: 'all'
-        }
+        };
     },
 
     computed: {
@@ -48,6 +59,6 @@ export default {
                 return this.assignments;
             }
             return this.assignments.filter(a => a.tag === this.currentTag);
-        },
+        }
     }
 };
